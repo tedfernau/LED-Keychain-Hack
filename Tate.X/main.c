@@ -95,7 +95,7 @@ void main(void)
         case 0x0000:
             ;
             uint8_t i = 0;
-            while (i <= 50)
+            while (i <= 100)
             {
                 __delay_ms(100);
                 IO_RA0_Toggle();
