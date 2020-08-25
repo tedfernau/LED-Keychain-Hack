@@ -95,52 +95,62 @@ void main(void)
         case 0x0000:
             ;
             uint8_t i = 0;
-            while (i <= 100)
+            while (i <= 20)
             {
                 __delay_ms(100);
-                IO_RA0_Toggle();
-                IO_RA1_Toggle();
-                IO_RA2_Toggle();
-                IO_RA4_Toggle();
-                IO_RA5_Toggle();
-                i++;
-            }
+
+                IO_RA0_SetLow();
+                IO_RA1_SetLow();
+                IO_RA2_SetLow();
+                IO_RA4_SetLow();
+                IO_RA5_SetLow();
+
+                __delay_ms(5);
+
+                
               IO_RA0_SetHigh();
               IO_RA1_SetHigh();
               IO_RA2_SetHigh();
               IO_RA4_SetHigh();
               IO_RA5_SetHigh();
+                i++;
+            }
+//              IO_RA0_SetHigh();
+//              IO_RA1_SetHigh();
+//              IO_RA2_SetHigh();
+//              IO_RA4_SetHigh();
+//              IO_RA5_SetHigh();
             SLEEP();
           break;
-        case 0x0001:
+        case 1:
           IO_RA0_SetLow();
           IO_RA1_SetHigh();
           IO_RA2_SetHigh();
           IO_RA4_SetHigh();
           IO_RA5_SetHigh();
           break;
-        case 0x0002:
+        case 2:
             IO_RA0_SetLow();
             IO_RA1_SetLow();
             IO_RA2_SetHigh();
             IO_RA4_SetHigh();
             IO_RA5_SetHigh();
           break;
-        case 0x0003:
+        case 3:
           IO_RA0_SetLow();
           IO_RA1_SetLow();
           IO_RA2_SetHigh();
           IO_RA4_SetLow();
           IO_RA5_SetHigh();
           break;
-        case 0x0004:
+        case 4:
           IO_RA0_SetLow();
           IO_RA1_SetLow();
           IO_RA2_SetHigh();
           IO_RA4_SetLow();
           IO_RA5_SetLow();
           break;
-        case 0x0005:
+        case 5:
           IO_RA0_SetLow();
           IO_RA1_SetLow();
           IO_RA2_SetLow();
@@ -151,11 +161,16 @@ void main(void)
           break;
     }
 
-
-    __delay_ms(60000);
+    __delay_ms(500);
+        IO_RA0_SetHigh();
+        IO_RA1_SetHigh();
+        IO_RA2_SetHigh();
+        IO_RA4_SetHigh();
+        IO_RA5_SetHigh();
+    __delay_ms(55500);
     if(readWord >= 0x0001)
         {
-            readWord = readWord - 0x0001;
+            readWord = readWord - 1;
             FLASH_WriteWord(flashAddr, Buf, readWord);
         }
    }
