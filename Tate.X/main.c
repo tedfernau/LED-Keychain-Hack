@@ -101,18 +101,18 @@ void main(void)
 
                 IO_RA0_SetLow();
                 IO_RA1_SetLow();
-                IO_RA2_SetLow();
                 IO_RA4_SetLow();
                 IO_RA5_SetLow();
-
+                IO_RA2_SetLow();
+                
                 __delay_ms(5);
 
                 
               IO_RA0_SetHigh();
               IO_RA1_SetHigh();
-              IO_RA2_SetHigh();
               IO_RA4_SetHigh();
               IO_RA5_SetHigh();
+              IO_RA2_SetHigh();
                 i++;
             }
 //              IO_RA0_SetHigh();
@@ -125,37 +125,37 @@ void main(void)
         case 1:
           IO_RA0_SetLow();
           IO_RA1_SetHigh();
-          IO_RA2_SetHigh();
           IO_RA4_SetHigh();
           IO_RA5_SetHigh();
+          IO_RA2_SetHigh();
           break;
         case 2:
             IO_RA0_SetLow();
             IO_RA1_SetLow();
-            IO_RA2_SetHigh();
             IO_RA4_SetHigh();
             IO_RA5_SetHigh();
+            IO_RA2_SetHigh();
           break;
         case 3:
           IO_RA0_SetLow();
           IO_RA1_SetLow();
-          IO_RA2_SetHigh();
           IO_RA4_SetLow();
           IO_RA5_SetHigh();
+          IO_RA2_SetHigh();
           break;
         case 4:
           IO_RA0_SetLow();
           IO_RA1_SetLow();
-          IO_RA2_SetHigh();
           IO_RA4_SetLow();
           IO_RA5_SetLow();
+          IO_RA2_SetHigh();
           break;
         case 5:
           IO_RA0_SetLow();
           IO_RA1_SetLow();
-          IO_RA2_SetLow();
           IO_RA4_SetLow();
           IO_RA5_SetLow();
+          IO_RA2_SetLow();
           break;
         default:
           break;
@@ -164,10 +164,10 @@ void main(void)
     __delay_ms(500);
         IO_RA0_SetHigh();
         IO_RA1_SetHigh();
-        IO_RA2_SetHigh();
         IO_RA4_SetHigh();
         IO_RA5_SetHigh();
-    __delay_ms(55500);
+        IO_RA2_SetHigh();
+    __delay_ms(59500);
     if(readWord >= 0x0001)
         {
             readWord = readWord - 1;
